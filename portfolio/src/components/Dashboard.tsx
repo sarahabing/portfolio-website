@@ -88,10 +88,9 @@ function Dashboard() {
   };
 
   React.useEffect(() => {
-    require('dotenv').config();
     axios.get("https://api.github.com/users/sarahabing/repos", {
       headers: {
-        'Authorization': `token ${process.env.GITHUB_TOKEN}`
+        'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}`
       }
     }).then((response: any) => {
       setRepos(response.data);
