@@ -15,7 +15,7 @@ interface NavProps {
   }
 
 
-function Navigation(props : NavProps) :JSX.Element {
+function Navigation(props : NavProps) : JSX.Element {
     const [repoList, setRepos] = useState([]);
     useEffect(() => {
         axios.get("https://api.github.com/users/sarahabing/repos", {

@@ -1,6 +1,7 @@
 import Dashboard from './components/Dashboard';
 import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 const defaultTheme = createTheme();
 
 function App() {

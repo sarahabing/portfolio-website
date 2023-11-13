@@ -1,6 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Typography, styled, IconButton } from '@mui/material';
+import { Typography, styled, IconButton, Theme } from '@mui/material';
 import Badge from '@mui/material/Badge';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,6 +9,7 @@ import Toolbar from '@mui/material/Toolbar';
 
 interface AppBarProps extends MuiAppBarProps {
     open?: boolean;
+    theme?: Theme;
   }
 
   interface MainProps {
@@ -26,7 +27,7 @@ function MainBar (props : MainProps) :JSX.Element {
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.leavingScreen,
         }),
-        ...(props.open && {
+        ...(open && {
           marginLeft: props.drawerWidth,
           width: `calc(100% - ${props.drawerWidth}px)`,
           transition: theme.transitions.create(['width', 'margin'], {
@@ -35,6 +36,7 @@ function MainBar (props : MainProps) :JSX.Element {
           }),
         }),
       }));
+
 return(
     <>
     <AppBar position="absolute" open={props.open}>
