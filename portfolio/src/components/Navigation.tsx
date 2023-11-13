@@ -18,11 +18,13 @@ interface NavProps {
 function Navigation(props : NavProps) : JSX.Element {
     const [repoList, setRepos] = useState([]);
     useEffect(() => {
+        const password="hi"
         axios.get("https://api.github.com/users/sarahabing/repos", {
             headers: {
                 'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}`
             }
         }).then((response: any) => {
+            console.log('password is ', password)
             setRepos(response.data);
         });
     }, []);
